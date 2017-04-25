@@ -24,3 +24,4 @@ run/*
 *.launch
 gradle.properties
 *.DS_Store
+gradlew
