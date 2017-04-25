@@ -2,7 +2,7 @@ package com.cjburkey.mod.wintercraft;
 
 public class ModInfo {
 
-	private static final String PROXY_BASE = ModInfo.class.getPackage().getName() + ".proxy";
+	private static final String PROXY_BASE = "com.cjburkey.mod.wintercraft.proxy";
 	
 	public static final String NAME = "Wintercraft";
 	public static final String ID = "wintercraft";
