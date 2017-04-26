@@ -25,3 +25,4 @@ run/*
 gradle.properties
 *.DS_Store
 gradlew
+/bin/
