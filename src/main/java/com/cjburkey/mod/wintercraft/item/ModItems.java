@@ -6,6 +6,7 @@ import com.cjburkey.mod.wintercraft.ModInfo;
 import com.cjburkey.mod.wintercraft.tab.ModTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -17,8 +18,18 @@ public class ModItems {
 	
 	public static Item itemCandyCane;
 	
+	public static Item itemWinterHelmet;
+	public static Item itemWinterChestplate;
+	public static Item itemWinterLeggings;
+	public static Item itemWinterBoots;
+	
 	public static final void commonPreinit() {
 		itemCandyCane = registerItem(new ItemCandyCane(), "item_candy_cane");
+
+		itemWinterHelmet = registerItem(new ItemWinterArmor(1, EntityEquipmentSlot.HEAD), "item_winter_helmet");
+		itemWinterChestplate = registerItem(new ItemWinterArmor(1, EntityEquipmentSlot.CHEST), "item_winter_chestplate");
+		itemWinterLeggings = registerItem(new ItemWinterArmor(2, EntityEquipmentSlot.LEGS), "item_winter_leggings");
+		itemWinterBoots = registerItem(new ItemWinterArmor(1, EntityEquipmentSlot.FEET), "item_winter_boots");
 	}
 	
 	public static final void clientInit() {

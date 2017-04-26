@@ -1,7 +1,9 @@
 package com.cjburkey.mod.wintercraft.world;
 
 import java.util.Random;
+import com.cjburkey.mod.wintercraft.Util;
 import com.cjburkey.mod.wintercraft.block.ModBlocks;
+import com.cjburkey.mod.wintercraft.cfg.ModConfigHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -17,11 +19,11 @@ public class WorldGenCandyCane implements IWorldGenerator {
 	}
 	
 	private void generate(World world, Random rand, int i, int j) {
-		if(rand.nextInt(10) == 2) {
+		if(rand.nextInt(ModConfigHandler.candyCaneChance) == 0) {
 			int x = i + rand.nextInt(16);
 			int z = j + rand.nextInt(16);
 			int y = getTallestPoint(world, x, z) + 1;
-			for(int yP = 0; yP < 1 + rand.nextInt(10); yP ++) {
+			for(int yP = 0; yP < Util.randomRange(rand, ModConfigHandler.candyCaneMinHeight, ModConfigHandler.candyCaneMaxHeight); yP ++) {
 				world.setBlockState(new BlockPos(x, y + yP, z), ModBlocks.blockCandyCane.getDefaultState());
 			}
 		}

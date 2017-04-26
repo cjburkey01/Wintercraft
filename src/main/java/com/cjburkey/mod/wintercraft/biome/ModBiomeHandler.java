@@ -10,7 +10,7 @@ import net.minecraft.world.biome.Biome;
 public class ModBiomeHandler {
 	
 	public static final void commonPostinit() {
-		if(ModConfigHandler.isWorldFrozen()) {
+		if(ModConfigHandler.frozenWorld) {
 			RegistryNamespaced<ResourceLocation, Biome> biomes = Biome.REGISTRY;
 			Log.info("Setting to freezing biomes.");
 			biomes.forEach(b -> {
