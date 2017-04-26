@@ -1,1 +1,6 @@
 item.item_candy_cane.name=Candy Cane
+
+tile.block_candy_cane.name=Candy Cane Block
+
+itemGroup.wintercraft_items=Wintercraft Mod Items
+itemGroup.wintercraft_blocks=Wintercraft Mod Blocks

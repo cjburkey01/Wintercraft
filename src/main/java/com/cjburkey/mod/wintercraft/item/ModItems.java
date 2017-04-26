@@ -3,9 +3,11 @@ package com.cjburkey.mod.wintercraft.item;
 import java.util.ArrayList;
 import java.util.List;
 import com.cjburkey.mod.wintercraft.ModInfo;
+import com.cjburkey.mod.wintercraft.tab.ModTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -30,6 +32,7 @@ public class ModItems {
 	public static final Item registerItem(Item item, String name) {
 		item.setUnlocalizedName(name);
 		item.setRegistryName(new ResourceLocation(ModInfo.ID, name));
+		if(!(item instanceof ItemBlock)) item.setCreativeTab(ModTabs.tabItems);
 		GameRegistry.register(item);
 		items.add(item);
 		return item;
