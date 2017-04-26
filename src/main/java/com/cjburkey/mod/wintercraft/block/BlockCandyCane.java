@@ -19,7 +19,6 @@ public class BlockCandyCane extends Block {
 		super(Material.WOOD);
 		this.setSoundType(SoundType.WOOD);
 		this.setHardness(1.2f);
-		this.setLightLevel(1.0f);
 	}
 	
 	public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {

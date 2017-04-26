@@ -7,6 +7,7 @@ import com.cjburkey.mod.wintercraft.cfg.ModConfigHandler;
 import com.cjburkey.mod.wintercraft.crafting.ModCrafting;
 import com.cjburkey.mod.wintercraft.item.ModItems;
 import com.cjburkey.mod.wintercraft.tab.ModTabs;
+import com.cjburkey.mod.wintercraft.world.ModWorldGenerators;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -18,6 +19,7 @@ public class CommonProxy {
 		ModTabs.commonPreinit();
 		ModBlocks.commonPreinit();
 		ModItems.commonPreinit();
+		ModWorldGenerators.commonPreinit();
 	}
 
 	public void init(FMLInitializationEvent e) {
