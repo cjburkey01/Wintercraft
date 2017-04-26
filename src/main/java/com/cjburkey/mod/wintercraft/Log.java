@@ -10,7 +10,7 @@ public class Log {
 	}
 	
 	public static final void info(Object msg) {
-		getLogger().info(msg);
+		getLogger().info(msg + "");
 	}
 	
 }

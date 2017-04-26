@@ -5,6 +5,7 @@ import com.cjburkey.mod.wintercraft.biome.ModBiomeHandler;
 import com.cjburkey.mod.wintercraft.block.ModBlocks;
 import com.cjburkey.mod.wintercraft.cfg.ModConfigHandler;
 import com.cjburkey.mod.wintercraft.crafting.ModCrafting;
+import com.cjburkey.mod.wintercraft.event.ModEvents;
 import com.cjburkey.mod.wintercraft.item.ModItems;
 import com.cjburkey.mod.wintercraft.material.ModMaterials;
 import com.cjburkey.mod.wintercraft.tab.ModTabs;
@@ -25,6 +26,7 @@ public class CommonProxy {
 	}
 
 	public void init(FMLInitializationEvent e) {
+		ModEvents.commonInit();
 		ModCrafting.commonInit();
 	}
 
