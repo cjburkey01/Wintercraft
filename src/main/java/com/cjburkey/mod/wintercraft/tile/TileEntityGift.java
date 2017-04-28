@@ -1,17 +1,23 @@
 package com.cjburkey.mod.wintercraft.tile;
 
+import java.util.ArrayList;
+import com.cjburkey.mod.wintercraft.block.ModBlocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 
 public class TileEntityGift extends TileEntity implements IInventory {
 	
 	private ItemStack[] inventory;
+	private boolean locked = false;
+	public boolean drop = true;
 	
 	public TileEntityGift() {
 		inventory = new ItemStack[getSizeInventory()];
@@ -31,11 +37,18 @@ public class TileEntityGift extends TileEntity implements IInventory {
 	}
 
 	public int getSizeInventory() {
-		return 9;
+		return 1;
 	}
 
 	public boolean isEmpty() {
-		return false;
+		for(int i = 0; i < inventory.length; i ++) {
+			if(getStackInSlot(i) != ItemStack.EMPTY) return false; 
+		}
+		return true;
+	}
+	
+	public boolean shouldDrop() {
+		return drop && !isEmpty();
 	}
 
 	public ItemStack getStackInSlot(int index) {
@@ -92,7 +105,7 @@ public class TileEntityGift extends TileEntity implements IInventory {
 	}
 
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		return true;
+		return !stack.isItemEqual(new ItemStack(ModBlocks.blockGift));
 	}
 
 	public int getField(int id) {
@@ -111,6 +124,14 @@ public class TileEntityGift extends TileEntity implements IInventory {
 		for(int i = 0; i < getSizeInventory(); i ++) setInventorySlotContents(i, ItemStack.EMPTY);
 	}
 	
+	public void lock() {
+		locked = true;
+	}
+	
+	public boolean isLocked() {
+		return locked;
+	}
+	
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		NBTTagList list = new NBTTagList();
 		for(int i = 0; i < getSizeInventory(); i ++) {
@@ -122,6 +143,7 @@ public class TileEntityGift extends TileEntity implements IInventory {
 			}
 		}
 		nbt.setTag("Items", list);
+		nbt.setBoolean("locked", locked);
 		return super.writeToNBT(nbt);
 	}
 	
@@ -132,7 +154,16 @@ public class TileEntityGift extends TileEntity implements IInventory {
 			int slot = stackTag.getByte("Slot") & 255;
 			setInventorySlotContents(slot, new ItemStack(stackTag));
 		}
+		locked = nbt.getBoolean("locked");
 		super.readFromNBT(nbt);
+	}
+	
+	public NBTTagCompound saveToNbt(NBTTagCompound nbt) {
+		NonNullList<ItemStack> items = NonNullList.<ItemStack>withSize(getSizeInventory(), ItemStack.EMPTY);
+		for(int i = 0; i < inventory.length; i ++) items.set(i, inventory[i]);
+		ItemStackHelper.saveAllItems(nbt, items, false);
+		nbt.setBoolean("locked", locked);
+		return nbt;
 	}
 	
 }

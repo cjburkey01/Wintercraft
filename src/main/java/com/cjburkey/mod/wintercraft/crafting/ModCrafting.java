@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.cjburkey.mod.wintercraft.block.ModBlocks;
 import com.cjburkey.mod.wintercraft.item.ModItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -27,6 +28,13 @@ public final class ModCrafting {
 			Character.valueOf('x'), Items.SUGAR,
 			Character.valueOf('y'), "dyeRed"
 		});
+		registerCrafting(new ItemStack(ModItems.itemWrappingPaper, 1), new Object[] {
+			"xyx",
+			"yxy",
+			"xyx",
+			Character.valueOf('x'), "dyeGreen",
+			Character.valueOf('y'), "dyeRed"
+		});
 	}
 	
 	private static void addNormalBlocks() {
@@ -36,6 +44,13 @@ public final class ModCrafting {
 			" x ",
 			Character.valueOf('x'), "treeLeaves",
 			Character.valueOf('y'), "stickWood"
+		});
+		registerCrafting(new ItemStack(ModBlocks.blockGift, 1), new Object[] {
+			"yyy",
+			"yxy",
+			"yyy",
+			Character.valueOf('x'), Blocks.CHEST,
+			Character.valueOf('y'), ModItems.itemWrappingPaper
 		});
 	}
 	

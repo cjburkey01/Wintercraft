@@ -1,6 +1,10 @@
 package com.cjburkey.mod.wintercraft;
 
 import java.util.Random;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 
 public final class Util {
 	
