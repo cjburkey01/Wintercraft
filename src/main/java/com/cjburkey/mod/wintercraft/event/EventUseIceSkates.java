@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class EventIceSkates {
+public class EventUseIceSkates {
 	
 	private static float defaultSpeed;
 	private static float fastSpeed;
@@ -46,7 +46,7 @@ public class EventIceSkates {
 			}
 			
 			timer --;
-			if(timer <= 0 && shouldSpeedUp(player)) {
+			if(timer <= 0 && shouldSpeedUp(player) && player.capabilities.isCreativeMode) {
 				timer = timerStart;
 				damageBoots(player);
 			}
