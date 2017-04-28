@@ -15,9 +15,11 @@ public class ModBlocks {
 	private static final HashMap<Block, Item> blocks = new HashMap<>();
 	
 	public static Block blockCandyCane;
+	public static Block blockWreath;
 	
 	public static final void commonPreinit() {
 		blockCandyCane = registerBlock(new BlockCandyCane(), "block_candy_cane");
+		blockWreath = registerBlock(new BlockWreath(), "block_wreath");
 	}
 	
 	private static final Block registerBlock(Block block, String name) {

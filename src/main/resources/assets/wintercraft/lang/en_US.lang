@@ -1,6 +1,11 @@
 item.item_candy_cane.name=Candy Cane
+item.item_winter_helmet.name=Cozy Hat
+item.item_winter_chestplate.name=Warm Coat
+item.item_winter_leggings.name=Nice Pants
+item.item_winter_boots.name=Ice Skates
 
-tile.block_candy_cane.name=Candy Cane Block
+tile.block_candy_cane.name=Big Candy Cane
+tile.block_wreath.name=Wreath
 
 itemGroup.wintercraft_items=Wintercraft Mod Items
 itemGroup.wintercraft_blocks=Wintercraft Mod Blocks

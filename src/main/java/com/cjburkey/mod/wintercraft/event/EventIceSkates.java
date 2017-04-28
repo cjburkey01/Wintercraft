@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 public class EventIceSkates {
 	
-	private static final float defaultSpeed = 0.2f;
+	private static float defaultSpeed;
 	private static float fastSpeed;
 	private static boolean init = false;
 	
@@ -26,13 +26,13 @@ public class EventIceSkates {
 	
 	@SubscribeEvent
 	public void call(PlayerTickEvent e) {
+		EntityPlayer player = e.player;
 		if(!init) {
 			init = true;
 			fastSpeed = ModConfigHandler.iceSkatesSpeed;
+			defaultSpeed = player.capabilities.getWalkSpeed();
 		}
-		EntityPlayer player = e.player;
-		World world = player.world;
-		if(!world.isRemote) {
+		if(!player.world.isRemote) {
 			if(shouldSpeedUp(player) && !didAdd(player)) {
 				player.capabilities.setPlayerWalkSpeed(fastSpeed);
 				didAdd.put(player, true);
