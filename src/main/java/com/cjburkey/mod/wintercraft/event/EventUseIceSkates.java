@@ -46,7 +46,7 @@ public class EventUseIceSkates {
 			}
 			
 			timer --;
-			if(timer <= 0 && shouldSpeedUp(player) && player.capabilities.isCreativeMode) {
+			if(timer <= 0 && shouldSpeedUp(player) && !player.capabilities.isCreativeMode) {
 				timer = timerStart;
 				damageBoots(player);
 			}
