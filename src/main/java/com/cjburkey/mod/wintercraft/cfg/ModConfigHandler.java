@@ -3,7 +3,7 @@ package com.cjburkey.mod.wintercraft.cfg;
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 
-public class ModConfigHandler {
+public final class ModConfigHandler {
 	
 	private static File file;
 	private static Configuration cfg;
@@ -14,12 +14,12 @@ public class ModConfigHandler {
 	public static int candyCaneMaxHeight;
 	public static float iceSkatesSpeed;
 	
-	public static final void commonPreinit(File cfgFile) {
+	public static void commonPreinit(File cfgFile) {
 		file = cfgFile;
 		syncConfig();
 	}
 	
-	public static final void syncConfig() {
+	public static void syncConfig() {
 		cfg = new Configuration(file);
 		cfg.load();
 		

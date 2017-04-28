@@ -2,9 +2,9 @@ package com.cjburkey.mod.wintercraft.event;
 
 import net.minecraftforge.common.MinecraftForge;
 
-public class ModEvents {
+public final class ModEvents {
 	
-	public static final void commonInit() {
+	public static void commonInit() {
 		MinecraftForge.EVENT_BUS.register(new EventUseIceSkates());
 	}
 	

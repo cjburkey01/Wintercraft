@@ -7,10 +7,10 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemWinterArmor extends ItemArmor {
+public final class ItemWinterArmor extends ItemArmor {
 	
 	public ItemWinterArmor(int renderIndexIn, EntityEquipmentSlot type) {
-		super(ModMaterials.materialWinter, renderIndexIn, type);
+		super(ModMaterials.materialArmorWinter, renderIndexIn, type);
 	}
 	
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {

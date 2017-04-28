@@ -7,9 +7,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.RegistryNamespaced;
 import net.minecraft.world.biome.Biome;
 
-public class ModBiomeHandler {
+public final class ModBiomeHandler {
 	
-	public static final void commonPostinit() {
+	public static void commonPostinit() {
 		if(ModConfigHandler.frozenWorld) {
 			RegistryNamespaced<ResourceLocation, Biome> biomes = Biome.REGISTRY;
 			Log.info("Setting to freezing biomes.");

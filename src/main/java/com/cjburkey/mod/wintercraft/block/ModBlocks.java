@@ -10,19 +10,19 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ModBlocks {
+public final class ModBlocks {
 	
 	private static final HashMap<Block, Item> blocks = new HashMap<>();
 	
 	public static Block blockCandyCane;
 	public static Block blockWreath;
 	
-	public static final void commonPreinit() {
+	public static void commonPreinit() {
 		blockCandyCane = registerBlock(new BlockCandyCane(), "block_candy_cane");
 		blockWreath = registerBlock(new BlockWreath(), "block_wreath");
 	}
 	
-	private static final Block registerBlock(Block block, String name) {
+	private static Block registerBlock(Block block, String name) {
 		block.setUnlocalizedName(name);
 		block.setRegistryName(new ResourceLocation(ModInfo.ID, name));
 		block.setCreativeTab(ModTabs.tabBlocks);

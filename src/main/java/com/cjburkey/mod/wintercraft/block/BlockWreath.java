@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockWreath extends BlockDirectional {
+public final class BlockWreath extends BlockDirectional {
 	
 	private static final AxisAlignedBB AABB_DOWN = new AxisAlignedBB(0.0d, 15.0d / 16.0d, 0.0d, 1.0d, 1.0d, 1.0d);
     private static final AxisAlignedBB AABB_UP = new AxisAlignedBB(0.0d, 0.0D, 0.0d, 1.0d, 1.0d / 16.0d, 1.0d);

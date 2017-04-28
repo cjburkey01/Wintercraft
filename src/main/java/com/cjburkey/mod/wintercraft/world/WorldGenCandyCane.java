@@ -12,7 +12,7 @@ import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class WorldGenCandyCane implements IWorldGenerator {
+public final class WorldGenCandyCane implements IWorldGenerator {
 	
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		generate(world, random, chunkX * 16, chunkZ * 16);

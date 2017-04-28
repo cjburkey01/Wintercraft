@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class EventUseIceSkates {
+public final class EventUseIceSkates {
 	
 	private static float defaultSpeed;
 	private static float fastSpeed;

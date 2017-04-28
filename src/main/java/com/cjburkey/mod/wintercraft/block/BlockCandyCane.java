@@ -16,7 +16,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockCandyCane extends Block {
+public final class BlockCandyCane extends Block {
 	
 	public BlockCandyCane() {
 		super(Material.WOOD);

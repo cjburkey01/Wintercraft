@@ -1,6 +1,6 @@
 package com.cjburkey.mod.wintercraft;
 
-public class ModInfo {
+public final class ModInfo {
 
 	private static final String BASE = "com.cjburkey.mod.wintercraft";
 	

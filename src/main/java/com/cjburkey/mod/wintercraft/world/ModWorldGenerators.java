@@ -2,9 +2,9 @@ package com.cjburkey.mod.wintercraft.world;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ModWorldGenerators {
+public final class ModWorldGenerators {
 	
-	public static final void commonPreinit() {
+	public static void commonPreinit() {
 		GameRegistry.registerWorldGenerator(new WorldGenCandyCane(), 99);
 	}
 	

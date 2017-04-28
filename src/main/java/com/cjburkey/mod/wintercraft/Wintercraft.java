@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(name = ModInfo.NAME, modid = ModInfo.ID, version = ModInfo.VERSION)
-public class Wintercraft {
+public final class Wintercraft {
 	
 	@Instance
 	public static Wintercraft instance;
