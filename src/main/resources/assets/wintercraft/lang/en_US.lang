@@ -11,6 +11,9 @@ item.item_winter_hoe.name=Candied Hoe
 
 tile.block_candy_cane.name=Big Candy Cane
 tile.block_wreath.name=Wreath
+tile.block_gift.name=Present
+
+container.tile_entity_gift=Present
 
 itemGroup.wintercraft_items=Wintercraft Mod Items
 itemGroup.wintercraft_blocks=Wintercraft Mod Blocks
