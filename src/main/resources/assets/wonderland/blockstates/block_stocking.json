@@ -1,0 +1,40 @@
+{
+    "variants": {
+        "facing=up,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true
+        },
+        "facing=down,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true, "x": 180
+        },
+        "facing=east,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true, "x": 90, "y": 90
+        },
+        "facing=west,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true, "x": 90, "y": 270
+        },
+        "facing=south,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true, "x": 90, "y": 180
+        },
+        "facing=north,full=false": {
+            "model": "wonderland:block_stocking_empty", "uvlock": true, "x": 90
+        },
+        "facing=up,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true
+        },
+        "facing=down,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true, "x": 180
+        },
+        "facing=east,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true, "x": 90, "y": 90
+        },
+        "facing=west,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true, "x": 90, "y": 270
+        },
+        "facing=south,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true, "x": 90, "y": 180
+        },
+        "facing=north,full=true": {
+            "model": "wonderland:block_stocking_full", "uvlock": true, "x": 90
+        }
+    }
+}

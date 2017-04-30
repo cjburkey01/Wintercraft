@@ -1,0 +1,24 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "0": "wonderland:blocks/block_gift_side",
+        "1": "wonderland:blocks/block_gift_top",
+        "2": "wonderland:blocks/block_gift_bottom",
+        "particle": "wonderland:blocks/block_gift_top"
+    },
+    "elements": [
+        {
+            "name": "Gift",
+            "from": [ 1.0, 0.0, 1.0 ], 
+            "to": [ 15.0, 10.0, 15.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 14.0, 10.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 14.0, 10.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 14.0, 10.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 14.0, 10.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 14.0, 14.0 ] },
+                "down": { "texture": "#2", "uv": [ 0.0, 0.0, 14.0, 14.0 ] }
+            }
+        }
+    ]
+}

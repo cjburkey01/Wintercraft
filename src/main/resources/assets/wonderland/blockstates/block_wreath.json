@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "facing=up": {
+            "model": "wonderland:block_wreath", "uvlock": true
+        },
+        "facing=down": {
+            "model": "wonderland:block_wreath", "uvlock": true, "x": 180
+        },
+        "facing=east": {
+            "model": "wonderland:block_wreath", "uvlock": true, "x": 90, "y": 90
+        },
+        "facing=west": {
+            "model": "wonderland:block_wreath", "uvlock": true, "x": 90, "y": 270
+        },
+        "facing=south": {
+            "model": "wonderland:block_wreath", "uvlock": true, "x": 90, "y": 180
+        },
+        "facing=north": {
+            "model": "wonderland:block_wreath", "uvlock": true, "x": 90
+        }
+    }
+}

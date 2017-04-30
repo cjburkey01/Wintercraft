@@ -1,0 +1,30 @@
+item.item_candy_cane.name=Candy Cane
+item.item_wrapping_paper.name=Gift Wrapping Paper
+item.item_winter_helmet.name=Cozy Hat
+item.item_winter_chestplate.name=Warm Coat
+item.item_winter_leggings.name=Nice Pants
+item.item_winter_boots.name=Ice Skates
+item.item_winter_sword.name=Candied Sword
+item.item_winter_pickaxe.name=Candied Pickaxe
+item.item_winter_axe.name=Candied Axe
+item.item_winter_shovel.name=Candied Shovel
+item.item_winter_hoe.name=Candied Hoe
+
+tile.block_candy_cane.name=Big Candy Cane
+tile.block_wreath.name=Wreath
+tile.block_gift.name=Present
+tile.block_stocking.name=Stocking
+
+container.tile_entity_gift=Present
+
+itemGroup.wintercraft_items=Wonderland Mod Items
+itemGroup.wintercraft_blocks=Wonderland Mod Blocks
+
+str.gift_has_contents=Wrapped
+str.gift_no_has_contents=Not Yet Wrapped
+
+str.stocking_claimed=You have claimed this stocking as your own!
+str.stocking_owned_by_other=This is not your stocking, robber.
+str.stocking_empty=There is nothing in your stocking. Try sleeping, Santa comes at night.
+str.stocking_got=You have received your stocking gift!
+str.stocking_santa_came=It looks like Santa came! Check your stocking(s)!

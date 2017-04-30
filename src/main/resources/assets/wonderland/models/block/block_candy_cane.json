@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "wonderland:blocks/block_candy_cane"
+    }
+}
