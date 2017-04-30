@@ -1,7 +1,7 @@
 [
 {
-  "modid": "wintercraft",
-  "name": "Wintercraft Mod",
+  "modid": "wonderland",
+  "name": "Winter Wonderland",
   "description": "A winter-themed mod for your winter-themed needs.",
   "version": "${version}",
   "mcversion": "${mcversion}",
