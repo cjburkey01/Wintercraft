@@ -11,6 +11,7 @@ import com.cjburkey.mod.wintercraft.gui.ModGuiHandler;
 import com.cjburkey.mod.wintercraft.item.ModItems;
 import com.cjburkey.mod.wintercraft.loot.ModLoots;
 import com.cjburkey.mod.wintercraft.material.ModMaterials;
+import com.cjburkey.mod.wintercraft.packet.ModPackets;
 import com.cjburkey.mod.wintercraft.tab.ModTabs;
 import com.cjburkey.mod.wintercraft.tile.ModTileEntities;
 import com.cjburkey.mod.wintercraft.world.ModWorldGenerators;
@@ -23,6 +24,7 @@ public class CommonProxy {
 	
 	public void preinit(FMLPreInitializationEvent e) {
 		ModConfigHandler.commonPreinit(new File(e.getSuggestedConfigurationFile().getParentFile(), "/Wintercraft/main.cfg"));
+		ModPackets.commonPreinit();
 		ModTabs.commonPreinit();
 		ModMaterials.commonPreinit();
 		ModTileEntities.commonPreinit();

@@ -53,6 +53,7 @@ public final class ModItems {
 	
 	private static void registerRender(Item item) {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		Log.info("Registered render for: " + item.getRegistryName().getResourcePath());
 	}
 	
 	public static Item registerItem(Item item, String name) {

@@ -17,6 +17,10 @@ public class TileEntityStocking extends TileEntity {
 		markDirty();
 	}
 	
+	public UUID getOwner() {
+		return player;
+	}
+	
 	public boolean hasOwner() {
 		return player != null;
 	}
@@ -27,14 +31,13 @@ public class TileEntityStocking extends TileEntity {
 	}
 	
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
-		if(nbt == null) nbt = new NBTTagCompound();
-		if(hasOwner()) nbt.setUniqueId("owning_player", player);
+		nbt.setUniqueId("owning_player", player);
 		return super.writeToNBT(nbt);
 	}
 	
 	public void readFromNBT(NBTTagCompound nbt) {
 		super.readFromNBT(nbt);
-		if(nbt != null && nbt.hasKey("owning_player")) player = nbt.getUniqueId("owning_player");
+		player = nbt.getUniqueId("owning_player");
 	}
 	
 	public boolean shouldRefresh(World world, BlockPos pos, IBlockState old, IBlockState neww) {

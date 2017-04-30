@@ -1,5 +1,6 @@
 package com.cjburkey.mod.wintercraft.block;
 
+import java.util.List;
 import javax.annotation.Nullable;
 import com.cjburkey.mod.wintercraft.Log;
 import com.cjburkey.mod.wintercraft.Util;
@@ -14,8 +15,8 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -24,6 +25,7 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -49,24 +51,28 @@ public class BlockStocking extends BlockDirectional implements ITileEntityProvid
 		if(!world.isRemote) {
 			TileEntityStocking tile = (TileEntityStocking) world.getTileEntity(pos);
 			if(!tile.hasOwner()) {
-				tile.setOwner(player);
-				Util.sendMsg(player, Util.translate("str.stocking_claimed"));
+				claim(world, pos, player);
 			} else {
-				if(!tile.doesPlayerOwn(player)) {
-					Util.sendMsg(player, Util.translate("str.stocking_owned_by_other"));
-				} else {
+				if(!tile.doesPlayerOwn(player)) Util.sendMsg(player, TextFormatting.RED + Util.translate("str.stocking_owned_by_other"));
+				else {
 					if(isFull(state)) {
-						Util.sendMsg(player, Util.translate("str.stocking_got"));
+						Util.sendMsg(player, TextFormatting.GREEN + Util.translate("str.stocking_got"));
 						setFull(world, pos, state, false);
 						giveGift(world, pos);
-					} else {
-						Util.sendMsg(player, Util.translate("str.stocking_empty"));
-						setFull(world, pos, state, true);
-					}
+					} else Util.sendMsg(player, TextFormatting.RED + Util.translate("str.stocking_empty"));
 				}
 			}
 		}
 		return true;
+	}
+	
+	public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase player, ItemStack stack) {
+		if(!world.isRemote) if(player instanceof EntityPlayer) claim(world, pos, (EntityPlayer) player);
+	}
+	
+	public void claim(World world, BlockPos pos, EntityPlayer player) {
+		((TileEntityStocking) world.getTileEntity(pos)).setOwner(player);
+		Util.sendMsg(player, TextFormatting.GREEN + Util.translate("str.stocking_claimed"));
 	}
 	
 	public void giveGift(World world, BlockPos pos) {
@@ -197,6 +203,25 @@ public class BlockStocking extends BlockDirectional implements ITileEntityProvid
 	public static EnumFacing getFacing(int meta) {
 		int i = meta & 7;
 		return i > 5 ? null : EnumFacing.getFront(i);
+	}
+	
+	public static void setFullAll(World world, boolean full) {
+		List<TileEntity> loaded = world.loadedTileEntityList;
+		for(TileEntity te : loaded) {
+			if(te instanceof TileEntityStocking) {
+				TileEntityStocking tile = (TileEntityStocking) te;
+				if(tile.hasOwner()) {
+					IBlockState state = world.getBlockState(tile.getPos());
+					BlockStocking block = (BlockStocking) state.getBlock();
+					block.setFull(world, tile.getPos(), state, full);
+					if(full) {
+						EntityPlayer player = world.getPlayerEntityByUUID(tile.getOwner());
+						if(player != null) Util.sendMsg(player, TextFormatting.GREEN + "" + TextFormatting.BOLD + Util.translate("str.stocking_santa_came"));
+					}
+					Log.info("Filled stocking at: " + tile.getPos());
+				}
+			}
+		}
 	}
 	
 }
