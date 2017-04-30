@@ -126,6 +126,7 @@ public class TileEntityGift extends TileEntity implements IInventory {
 	
 	public void lock() {
 		locked = true;
+		this.markDirty();
 	}
 	
 	public boolean isLocked() {

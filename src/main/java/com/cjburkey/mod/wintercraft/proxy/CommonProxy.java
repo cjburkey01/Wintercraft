@@ -9,6 +9,7 @@ import com.cjburkey.mod.wintercraft.crafting.ModCrafting;
 import com.cjburkey.mod.wintercraft.event.ModEvents;
 import com.cjburkey.mod.wintercraft.gui.ModGuiHandler;
 import com.cjburkey.mod.wintercraft.item.ModItems;
+import com.cjburkey.mod.wintercraft.loot.ModLoots;
 import com.cjburkey.mod.wintercraft.material.ModMaterials;
 import com.cjburkey.mod.wintercraft.tab.ModTabs;
 import com.cjburkey.mod.wintercraft.tile.ModTileEntities;
@@ -27,6 +28,7 @@ public class CommonProxy {
 		ModTileEntities.commonPreinit();
 		ModBlocks.commonPreinit();
 		ModItems.commonPreinit();
+		ModLoots.commonPreinit();
 		ModWorldGenerators.commonPreinit();
 	}
 

@@ -13,6 +13,7 @@ item.item_winter_hoe.name=Candied Hoe
 tile.block_candy_cane.name=Big Candy Cane
 tile.block_wreath.name=Wreath
 tile.block_gift.name=Present
+tile.block_stocking.name=Stocking
 
 container.tile_entity_gift=Present
 
@@ -21,3 +22,9 @@ itemGroup.wintercraft_blocks=Wintercraft Mod Blocks
 
 str.gift_has_contents=Wrapped
 str.gift_no_has_contents=Not Yet Wrapped
+
+str.stocking_claimed=You have claimed this stocking.
+str.stocking_owned_by_other=This is not your stocking.
+str.stocking_empty=There is nothing in your stocking.
+str.stocking_got=You have received your stocking gift.
+str.stocking_santa_came=It looks like Santa came! Check your stocking(s)!

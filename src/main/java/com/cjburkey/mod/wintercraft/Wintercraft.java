@@ -24,29 +24,36 @@ public final class Wintercraft {
 	
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent e) {
+		long start = now();
 		Log.info("Started PreInit");
 		proxy.preinit(e);
-		Log.info("Finished PreInit");
+		Log.info("Finished PreInit(" + (now() - start) + " ms).");
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
+		long start = now();
 		Log.info("Started Init");
 		MinecraftForge.EVENT_BUS.register(this);
 		proxy.init(e);
-		Log.info("Finished Init");
+		Log.info("Finished Init(" + (now() - start) + " ms).");
 	}
 
 	@EventHandler
 	public void postinit(FMLPostInitializationEvent e) {
+		long start = now();
 		Log.info("Started PostInit");
 		proxy.postinit(e);
-		Log.info("Finished PostInit");
+		Log.info("Finished PostInit(" + (now() - start) + " ms).");
 	}
 	
 	@SubscribeEvent
 	public void onConfigChanged(OnConfigChangedEvent eventArgs) {
 		if(eventArgs.getModID().equals(ModInfo.ID)) ModConfigHandler.syncConfig();
+	}
+	
+	private static long now() {
+		return System.currentTimeMillis();
 	}
 	
 }

@@ -17,11 +17,13 @@ public final class ModBlocks {
 	public static Block blockCandyCane;
 	public static Block blockWreath;
 	public static Block blockGift;
+	public static Block blockStocking;
 	
 	public static void commonPreinit() {
 		blockCandyCane = registerBlock(new BlockCandyCane(), "block_candy_cane");
 		blockWreath = registerBlock(new BlockWreath(), "block_wreath");
 		blockGift = registerBlock(blockGift = new BlockGift(), new ItemBlockGift(blockGift), "block_gift");
+		blockStocking = registerBlock(new BlockStocking(), "block_stocking");
 	}
 	
 	private static Block registerBlock(Block block, String name) {
