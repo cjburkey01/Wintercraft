@@ -6,6 +6,7 @@ import com.cjburkey.mod.wonderland.biome.ModBiomeHandler;
 import com.cjburkey.mod.wonderland.block.ModBlocks;
 import com.cjburkey.mod.wonderland.cfg.ModConfigHandler;
 import com.cjburkey.mod.wonderland.crafting.ModCrafting;
+import com.cjburkey.mod.wonderland.dimension.ModDimensions;
 import com.cjburkey.mod.wonderland.event.ModEvents;
 import com.cjburkey.mod.wonderland.gui.ModGuiHandler;
 import com.cjburkey.mod.wonderland.item.ModItems;
@@ -37,7 +38,9 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent e) {
 		ModEvents.commonInit();
 		ModCrafting.commonInit();
+		ModBiomeHandler.commonInit();
 		NetworkRegistry.INSTANCE.registerGuiHandler(WinterWonderland.instance, new ModGuiHandler());
+		ModDimensions.commonInit();
 	}
 
 	public void postinit(FMLPostInitializationEvent e) {

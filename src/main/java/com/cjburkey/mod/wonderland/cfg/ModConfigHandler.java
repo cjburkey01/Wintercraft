@@ -12,6 +12,7 @@ public final class ModConfigHandler {
 	public static int candyCaneChance;
 	public static int candyCaneMinHeight;
 	public static int candyCaneMaxHeight;
+	public static int wonderlandDimensionId;
 	public static float iceSkatesSpeed;
 	
 	public static void commonPreinit(File cfgFile) {
@@ -27,6 +28,7 @@ public final class ModConfigHandler {
 		candyCaneChance = cfg.getInt("candyCaneChange", "World", 10, 0, 100, "Chance per chunk is (1 / this number)");
 		candyCaneMinHeight = cfg.getInt("candyCaneMinHeight", "World", 1, 1, 5, "Lowest height of a candy cane. Must be below or equal to candyCaneMaxHeight");
 		candyCaneMaxHeight = cfg.getInt("candyCaneMaxHeight", "World", 10, 1, 20, "Highest height of a candy cane. Must be above or equal to candyCaneMinHeight");
+		wonderlandDimensionId = cfg.getInt("wonderlandDimensionId", "Dimension", 372, 0, 999, "The ID of the Wonderland dimension.");
 		iceSkatesSpeed = cfg.getFloat("iceSkatesSpeed", "Armor", 0.35f, 0.2f, 1.0f, "The speed at which the ice skates move the player. 0.2 is default player speed.");
 		
 		if(cfg.hasChanged()) cfg.save();

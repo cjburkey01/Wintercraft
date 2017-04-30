@@ -3,13 +3,28 @@ package com.cjburkey.mod.wonderland.biome;
 import java.lang.reflect.Field;
 import com.cjburkey.mod.wonderland.Log;
 import com.cjburkey.mod.wonderland.cfg.ModConfigHandler;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.RegistryNamespaced;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
 
 public final class ModBiomeHandler {
 	
+	public static Biome biomeWonderland;
+	
+	public static void commonInit() {
+		biomeWonderland = new BiomeWonderland();
+		BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(biomeWonderland, 30));
+	}
+	
 	public static void commonPostinit() {
+		biomeTemperatures();
+	}
+	
+	private static void biomeTemperatures() {
 		if(ModConfigHandler.frozenWorld) {
 			RegistryNamespaced<ResourceLocation, Biome> biomes = Biome.REGISTRY;
 			Log.info("Setting to freezing biomes.");

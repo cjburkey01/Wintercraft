@@ -5,10 +5,10 @@
   "description": "A winter-themed mod for your winter-themed needs.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
+  "url": "http://bit.ly/2pxpdGj",
+  "updateUrl": "http://bit.ly/2pjPo2L",
   "authorList": ["CJ Burkey"],
-  "credits": "The Forge and FML guys, for making forge.",
+  "credits": "I walk alone, I walk alone along this Boulevard of Broken Dreams.",
   "logoFile": "logo.png",
   "screenshots": [],
   "dependencies": []

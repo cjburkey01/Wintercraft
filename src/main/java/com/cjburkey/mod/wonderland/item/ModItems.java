@@ -19,6 +19,7 @@ public final class ModItems {
 	
 	public static Item itemCandyCane;
 	public static Item itemWrappingPaper;
+	public static Item itemHotChocolate;
 	
 	public static Item itemWinterHelmet;
 	public static Item itemWinterChestplate;
@@ -34,6 +35,7 @@ public final class ModItems {
 	public static void commonPreinit() {
 		itemCandyCane = registerItem(new ItemCandyCane(), "item_candy_cane");
 		itemWrappingPaper = registerItem(new Item(), "item_wrapping_paper");
+		itemHotChocolate = registerItem(new ItemHotChocolate(), "item_hot_chocolate");
 
 		itemWinterHelmet = registerItem(new ItemWinterArmor(1, EntityEquipmentSlot.HEAD), "item_winter_helmet");
 		itemWinterChestplate = registerItem(new ItemWinterArmor(1, EntityEquipmentSlot.CHEST), "item_winter_chestplate");
