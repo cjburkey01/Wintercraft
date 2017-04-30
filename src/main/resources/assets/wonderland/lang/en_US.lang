@@ -29,3 +29,6 @@ str.stocking_owned_by_other=This is not your stocking, robber.
 str.stocking_empty=There is nothing in your stocking. Try sleeping, Santa comes at night.
 str.stocking_got=You have received your stocking gift!
 str.stocking_santa_came=It looks like Santa came! Check your stocking(s)!
+
+str.hot_chocolate_can_drink=Something might happen if I drink this...
+str.hot_chocolate_return=Maybe I can get home...

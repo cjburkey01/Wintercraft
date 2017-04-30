@@ -18,14 +18,12 @@ public class TeleporterNoPortal extends Teleporter {
 	
 	public void placeInPortal(Entity entity, float yaw) {
 		entity.setVelocity(0.0d, 0.0d, 0.0d);
+		entity.fallDistance = 0;
 		double x = entity.posX;
 		double z = entity.posZ;
-		double y = 0.0d;
-		while(!world.isAirBlock(new BlockPos(x, y, z))) {
-			y ++;
-			Log.info(y);
-		}
-		entity.setLocationAndAngles(x, y + 0.5f, z, entity.rotationYaw, 0.0F);
+		double y = world.getHeight();
+		while(world.isAirBlock(new BlockPos(x, y, z))) y --;
+		entity.setLocationAndAngles(x, y + 3f, z, entity.rotationYaw, 0.0F);
 	}
 	
 }
