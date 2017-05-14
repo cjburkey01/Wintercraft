@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "wonderland:blocks/block_candy_log_end",
+        "side": "wonderland:blocks/block_candy_log_side"
+    }
+}

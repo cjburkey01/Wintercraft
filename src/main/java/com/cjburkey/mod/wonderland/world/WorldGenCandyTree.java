@@ -16,7 +16,7 @@ public class WorldGenCandyTree implements IWorldGenerator {
 	
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		int id = world.provider.getDimension();
-		if(id == 0 || id == ModConfigHandler.wonderlandDimensionId) generate(world, random, chunkX * 16, chunkZ * 16);
+		if(id == ModConfigHandler.wonderlandDimensionId) generate(world, random, chunkX * 16, chunkZ * 16);
 	}
 	
 	private void generate(World world, Random rand, int i, int j) {
@@ -29,9 +29,18 @@ public class WorldGenCandyTree implements IWorldGenerator {
 			int height;
 			topOfWood += (height = Util.randomRange(rand, ModConfigHandler.candyTreeMinHeight, ModConfigHandler.candyTreeMaxHeight));
 			for(int yP = 0; yP < height; yP ++) {
-				world.setBlockState(new BlockPos(x, y + yP, z), Blocks.LOG.getDefaultState());
+				world.setBlockState(new BlockPos(x, y + yP, z), ModBlocks.blockCandyLog.getDefaultState());
 			}
-			world.setBlockState(new BlockPos(x, topOfWood, z), Blocks.LEAVES.getDefaultState());
+			for(int at = 3; at > 0; at --) {
+				for(int xx = -at; xx <= at; xx ++) {
+					for(int zz = -at; zz <= at; zz ++) {
+						if(!(xx == 0 && zz == 0))
+							world.setBlockState(new BlockPos(x + xx, topOfWood - (at - 1), z + zz), ModBlocks.blockCandyLeaves.getDefaultState());
+						if((xx == 0 || zz == 0) && at - 1 <= 0)
+							world.setBlockState(new BlockPos(x + xx, topOfWood - (at - 1), z + zz), ModBlocks.blockCandyLeaves.getDefaultState());
+					}
+				}
+			}
 		}
 	}
 	

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y": { "model": "wonderland:block_candy_log" },
+        "axis=z": { "model": "wonderland:block_candy_log", "x": 90 },
+        "axis=x": { "model": "wonderland:block_candy_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "wonderland:block_candy_log_full" }
+    }
+}
